@@ -1,4 +1,20 @@
 ```
+Pod (with serviceAccount) ---> Makes PVC claim
+  |
+  v
+CSI Driver sees PVC --> Needs to call AWS EC2 API
+  |
+  v
+Uses serviceAccount token --> Authenticates via OIDC --> Assumes IAM Role
+  |
+  v
+IAM Role (has EBS permissions) --> Allows CSI Driver to manage EBS Volumes
+  |
+  v
+Volume provisioned + attached to Pod
+```
+
+```
 eksctl create cluster -f eks-cluster.yaml
 ```
 
