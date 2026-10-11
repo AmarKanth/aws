@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: kubeflowOperationCluster
+  region: ap-south-1
+
+managedNodeGroups:
+  - name: standard-workers
+    instanceType: t3.medium
+    minSize: 1
+    desiredCapacity: 3
+    maxSize: 4
+    availabilityZones: ["ap-south-1a"]
+    ssh:
+      publicKeyName: eks-keypair
