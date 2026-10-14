@@ -13,3 +13,12 @@ aws ec2 describe-vpcs \
 --output text \
 --region ap-south-1
 ```
+
++ Get the subnets of the vpc
+```
+aws ec2 describe-subnets \
+--filters "Name=vpc-id,Values=vpc-0574674caca93e2cb" \
+--query "Subnets[].SubnetId" \
+--output text \
+--region ap-south-1
+```
