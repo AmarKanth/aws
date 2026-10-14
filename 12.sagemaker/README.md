@@ -27,7 +27,7 @@ aws ec2 describe-subnets \
 + Create an Execution Role for SageMaker Domain
   <br/>
   
-  - Create a simple trust policy and save as trust.json
+  > Create a simple trust policy and save as trust.json
   ```
   {
     "Version": "2012-10-17",
@@ -42,7 +42,7 @@ aws ec2 describe-subnets \
   ```
   <br/>
   
-  - Create the role
+  > Create the role
   ```
   aws iam create-role \
   --role-name SageMakerDomainExecutionRole \
