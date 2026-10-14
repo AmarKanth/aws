@@ -47,3 +47,26 @@ aws ec2 describe-subnets \
   ```
   aws iam get-role --role-name SageMakerDomainExecutionRole --query "Role.Arn" --output text
   ```
+
++ Create the sageMaker domain
+  <br/>
+
+  > Create the domain
+  ```
+  aws sagemaker create-domain \
+  --domain-name my-sagemaker-domain \
+  --auth-mode IAM \
+  --vpc-id vpc-0574674caca93e2cb \
+  --subnet-ids subnet-0165a7b3e371cf437 subnet-0f26fe0162c37dd07 subnet-077616ad271502087 \
+  --app-network-access-type VpcOnly \
+  --default-user-settings "{
+      \"ExecutionRole\": \"arn:aws:iam::058264205719:role/SageMakerDomainExecutionRole\"
+   }" \
+  --region ap-south-1
+  ```
+  <br/>
+
+  > Get the domain id
+  ```
+  aws sagemaker list-domains --region ap-south-1
+  ```
