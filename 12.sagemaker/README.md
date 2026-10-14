@@ -1,6 +1,7 @@
 ### AWS Sagemaker Setup
+<hr>
 
-+ To check whether aws cli is setup and configured
++ Verify AWS CLI is configured or not
 ```
 aws s3 ls
 ```
@@ -22,3 +23,28 @@ aws ec2 describe-subnets \
 --output text \
 --region ap-south-1
 ```
+
++ Create an Execution Role for SageMaker Domain
+  <br>
+  
+  - Create a simple trust policy and save as trust.json
+  ```
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": { "Service": "sagemaker.amazonaws.com" },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+  ```
+  <br>
+
+  - Create the role
+  ```
+  aws iam create-role \
+  --role-name SageMakerDomainExecutionRole \
+  --assume-role-policy-document file://trust.json
+  ```
