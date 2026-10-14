@@ -33,3 +33,11 @@ aws ec2 describe-subnets \
   --role-name SageMakerDomainExecutionRole \
   --assume-role-policy-document file://trust.json
   ```
+  <br/>
+  
+  > Attach sagemaker full policy
+  ```
+  aws iam attach-role-policy \
+  --role-name SageMakerDomainExecutionRole \
+  --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+  ```
