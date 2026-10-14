@@ -24,22 +24,7 @@ aws ec2 describe-subnets \
 --region ap-south-1
 ```
 
-+ Create an Execution Role for SageMaker Domain
-  <br/>
-  
-  > Create a simple trust policy and save as trust.json
-  ```
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": { "Service": "sagemaker.amazonaws.com" },
-        "Action": "sts:AssumeRole"
-      }
-    ]
-  }
-  ```
++ Create role for domain
   <br/>
   
   > Create the role
