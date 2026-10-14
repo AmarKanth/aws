@@ -41,3 +41,9 @@ aws ec2 describe-subnets \
   --role-name SageMakerDomainExecutionRole \
   --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
   ```
+  <br/>
+
+  > Get the role arn
+  ```
+  aws iam get-role --role-name SageMakerDomainExecutionRole --query "Role.Arn" --output text
+  ```
