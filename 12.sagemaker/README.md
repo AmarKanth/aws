@@ -80,7 +80,7 @@ aws ec2 describe-subnets \
   --region ap-south-1
   ```
 
-+ Create the IAM user and tag the user
++ Create the IAM user, tag the user and attach policy
   <br/>
   
   > Create the user
@@ -95,3 +95,22 @@ aws ec2 describe-subnets \
   --user-name alice-iam-user \
   --tags Key=studiouserid,Value=alice123
   ```
+  <br/>
+
+  > Create IAM policy
+  ```
+  aws iam create-policy \
+  --policy-name SageMaker-Studio-ABAC \
+  --policy-document file://sagemaker-abac.json
+  ```
+  <br/>
+
+  > Attach IAM user to the policy
+  ```
+  aws iam attach-user-policy \
+  --user-name alice-iam-user \
+  --policy-arn arn:aws:iam::<ACCOUNT_ID>:policy/SageMaker-Studio-ABAC
+  ```
+  <br/>
+
+  > Test
