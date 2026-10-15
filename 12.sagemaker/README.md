@@ -79,3 +79,19 @@ aws ec2 describe-subnets \
   --tags Key=studiouserid,Value=alice123 \
   --region ap-south-1
   ```
+
++ Create the IAM user and tag the user
+  <br/>
+  
+  > Create the user
+  ```
+  aws iam create-user --user-name alice-iam-user
+  ```
+  <br/>
+
+  > Tag the user
+  ```
+  aws iam tag-user \
+  --user-name alice-iam-user \
+  --tags Key=studiouserid,Value=alice123
+  ```
