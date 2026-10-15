@@ -113,4 +113,4 @@ aws ec2 describe-subnets \
   ```
   <br/>
 
-  > Test
++ Enable console access to the Alice IAM user and then if we try to access the different user profile studio it gives permission denied error.
