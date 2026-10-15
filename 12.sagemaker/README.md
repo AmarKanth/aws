@@ -109,7 +109,7 @@ aws ec2 describe-subnets \
   ```
   aws iam attach-user-policy \
   --user-name alice-iam-user \
-  --policy-arn arn:aws:iam::<ACCOUNT_ID>:policy/SageMaker-Studio-ABAC
+  --policy-arn arn:aws:iam::058264205719:policy/SageMaker-Studio-ABAC
   ```
   <br/>
 
