@@ -70,3 +70,12 @@ aws ec2 describe-subnets \
   ```
   aws sagemaker list-domains --region ap-south-1
   ```
+
++ Create sagemaker userprofile with tags
+  ```
+  aws sagemaker create-user-profile \
+  --domain-id d-vlnkfpprqatf \
+  --user-profile-name alice-profile \
+  --tags Key=studiouserid,Value=alice123 \
+  --region ap-south-1
+  ```
