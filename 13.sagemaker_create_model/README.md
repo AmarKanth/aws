@@ -41,7 +41,8 @@ aws sagemaker create-domain \
 --auth-mode IAM \
 --default-user-settings "ExecutionRole=arn:aws:iam::<ACCOUNT-ID>:role/SageMakerDemoExecutionRole" \
 --vpc-id <VPC-ID> \
---subnet-ids "<SUBNET-1>" "<SUBNET-2>"
+--subnet-ids "<SUBNET-1>" "<SUBNET-2>" \
+--app-network-access-type PublicInternetOnly
 ```
 
 ```
