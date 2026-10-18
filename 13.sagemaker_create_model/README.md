@@ -50,3 +50,5 @@ aws sagemaker create-user-profile \
 --domain-id <DOMAIN-ID> \
 --user-profile-name demo-user
 ```
+
++ Create jupyter nodebook and save the iris-model.pkl model file to s3
