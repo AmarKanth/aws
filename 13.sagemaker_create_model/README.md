@@ -39,9 +39,9 @@ aws ec2 describe-subnets --filters Name=vpc-id,Values=<VPC-ID> \
 aws sagemaker create-domain \
 --domain-name demo-domain \
 --auth-mode IAM \
---default-user-settings "ExecutionRole=arn:aws:iam::<ACCOUNT-ID>:role/SageMakerDemoExecutionRole" \
---vpc-id <VPC-ID> \
---subnet-ids "<SUBNET-1>" "<SUBNET-2>" \
+--default-user-settings "ExecutionRole=arn:aws:iam::058264205719:role/SageMakerDemoExecutionRole" \
+--vpc-id vpc-0574674caca93e2cb \
+--subnet-ids subnet-0165a7b3e371cf437 subnet-0f26fe0162c37dd07 subnet-077616ad27150 \
 --app-network-access-type PublicInternetOnly
 ```
 
