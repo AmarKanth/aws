@@ -1,3 +1,5 @@
++ SageMaker does not deploy individual files. It expects a tar.gz file.
+
 ```
 import tarfile
 
