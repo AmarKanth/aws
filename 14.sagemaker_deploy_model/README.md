@@ -18,3 +18,5 @@ bucket_name = "my-sagemaker-demo-bucket-amar"
 s3.upload_file("model.tar.gz", bucket_name, "model-artifacts/model.tar.gz")
 print("Packaged model uploaded to S3")
 ```
+
++ Execute deploy.ipynb file in sagemaker env to create the model endpoint.
