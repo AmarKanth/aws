@@ -1,0 +1,3 @@
+```
+minikube start --cpus 4 --memory 8192 --driver=docker
+```
