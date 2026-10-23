@@ -6,13 +6,13 @@ minikube start --cpus=4 --memory=12288
 + Install and setup kubeflow
   <br/>
 
-  > Delete proxy-agent
+  > Delete proxy-agent deployment
   ```
   kubectl delete deployment proxy-agent -n kubeflow
   ```
   <br/>
   
-  > Modify the controller-manager
+  > Modify the controller-manager deployment
   ```
   securityContext:
     allowPrivilegeEscalation: false
