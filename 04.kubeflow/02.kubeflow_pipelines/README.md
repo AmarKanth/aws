@@ -1,3 +1,3 @@
 ```
-minikube start --cpus 4 --memory 8192 --driver=docker
+colima start --arch aarch64 --vm-type vz --vz-rosetta --kubernetes --cpu 4 --memory 8
 ```
