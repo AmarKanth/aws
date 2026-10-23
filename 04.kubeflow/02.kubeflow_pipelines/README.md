@@ -7,3 +7,7 @@ colima start -p kubeflow-demo --arch x86_64 --cpu 4 --memory 8 --with-kubernetes
 ```
 
 + Install kubeflow
++ Delete proxy-agent
+```
+kubectl delete deployment proxy-agent -n kubeflow
+```
