@@ -1,13 +1,29 @@
 + Create the cluster
 ```
-brew install colima
-brew install lima
-brew install lima-additional-guestagents
-colima start -p kubeflow-demo --arch x86_64 --cpu 4 --memory 8 --with-kubernetes
+minikube start --cpus=4 --memory=12288
 ```
 
-+ Install kubeflow
-+ Delete proxy-agent
-```
-kubectl delete deployment proxy-agent -n kubeflow
-```
++ Install and setup kubeflow
+  <br/>
+
+  > Delete proxy-agent
+  ```
+  kubectl delete deployment proxy-agent -n kubeflow
+  ```
+  <br/>
+  
+  > Modify the controller-manager
+  ```
+  securityContext:
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+      - ALL
+    runAsNonRoot: true
+    runAsUser: 65534
+    seccompProfile:
+      type: RuntimeDefault
+  ```
+  <br/>
+
+  > Fix the ml-pipeline-ui deployment, change the livenessprobe and readinessprobe paths to the root URL (/). 
