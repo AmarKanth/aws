@@ -30,3 +30,4 @@ minikube start --cpus=4 --memory=12288
 
 + kubectl port-forward --address 0.0.0.0 -n kubeflow svc/ml-pipeline-ui 8080:8080
 + ssh -i amar-pc.pem -L 8080:localhost:8080 ubuntu@3.110.225.178
++ pip3 install kfp==2.17.3 --break-system-packages
