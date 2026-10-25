@@ -26,4 +26,6 @@ minikube start --cpus=4 --memory=12288
   ```
   <br/>
 
-  > Fix the ml-pipeline-ui deployment, change the livenessProbe, readinessProbe and startupProbe paths to /apis/v2beta1/healthz. 
+  > Fix the ml-pipeline-ui deployment, change the livenessProbe, readinessProbe and startupProbe paths to /apis/v2beta1/healthz.
+
++ kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
