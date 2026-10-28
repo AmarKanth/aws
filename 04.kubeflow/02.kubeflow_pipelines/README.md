@@ -15,6 +15,27 @@
   
   echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
   ```
+  <br/>
+
+  > Install XFCE Desktop & XRDP
+  ```
+  sudo apt install xfce4 xfce4-goodies dbus-x11 -y
+  
+  sudo apt install xrdp -y
+  
+  sudo adduser xrdp ssl-cert
+  
+  echo "xfce4-session" > ~/.xsession
+  
+  sudo systemctl restart xrdp
+  sudo systemctl enable xrdp
+  ```
+  <br/>
+
+  > Set a Password for the ubuntu User
+  ```
+  sudo passwd ubuntu
+  ```
   
 + Create the cluster
 ```
