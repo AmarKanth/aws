@@ -28,5 +28,5 @@ minikube start --cpus=4 --memory=12288
 
   > Fix the ml-pipeline deployment, change the livenessProbe, readinessProbe and startupProbe paths to /apis/v2beta1/healthz.
 
-+ kubectl port-forward --address 0.0.0.0 -n kubeflow svc/ml-pipeline-ui 8080:8080
++ kubectl port-forward --address 0.0.0.0 -n kubeflow svc/ml-pipeline-ui 8080:80
 + pip3 install kfp==2.17.3 --break-system-packages
