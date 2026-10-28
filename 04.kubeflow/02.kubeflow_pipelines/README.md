@@ -1,3 +1,21 @@
++ Create ec2 machine with GUI
+  <br/>
+
+  > Add rule with RDP-3389-0.0.0.0/0
+  <br/>
+  
+  > Setup Swapfile
+  ```
+  sudo apt update && sudo apt upgrade -y
+  
+  sudo fallocate -l 8G /swapfile
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+  
+  echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+  ```
+  
 + Create the cluster
 ```
 minikube start --cpus=4 --memory=12288
