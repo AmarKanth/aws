@@ -3,8 +3,6 @@
 # Description: A basic pipeline that prints a greeting.
 # Inputs:
 #    recipient: str [Default: 'World']
-# Outputs:
-#    Output: str
 components:
   comp-say-hello:
     executorLabel: exec-say-hello
@@ -53,12 +51,6 @@ pipelineInfo:
   name: hello-world-pipeline
 root:
   dag:
-    outputs:
-      parameters:
-        Output:
-          valueFromParameter:
-            outputParameterKey: Output
-            producerSubtask: say-hello
     tasks:
       say-hello:
         cachingOptions:
@@ -76,10 +68,6 @@ root:
       recipient:
         defaultValue: World
         isOptional: true
-        parameterType: STRING
-  outputDefinitions:
-    parameters:
-      Output:
         parameterType: STRING
 schemaVersion: 2.1.0
 sdkVersion: kfp-2.17.3
