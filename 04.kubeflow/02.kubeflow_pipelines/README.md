@@ -4,6 +4,14 @@ minikube start --cpus=4 --memory=12288
 ```
 
 + Install and setup kubeflow
+  > Installation
+  ```
+  export PIPELINE_VERSION=2.17.2
+  
+  kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION"
+  kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io
+  kubectl apply -k .
+  ```
   <br/>
 
   > Delete proxy-agent deployment
