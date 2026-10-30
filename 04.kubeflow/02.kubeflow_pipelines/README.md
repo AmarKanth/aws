@@ -31,3 +31,8 @@ minikube start --cpus=4 --memory=12288
   ```
   pip3 install kfp==2.17.3
   ```
++ Configure required things to fix the hello world pipeline pod.
+  > Create service account token.
+  <br/>
+  
+  > Add patch to the service account rbac.
