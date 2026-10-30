@@ -15,8 +15,10 @@ rules:
   - get
   - list
   - watch
+  - create
   - update
   - patch
+  - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -26,6 +28,9 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: pipeline-runner
+  namespace: kubeflow
+- kind: ServiceAccount
+  name: argo
   namespace: kubeflow
 roleRef:
   kind: Role
