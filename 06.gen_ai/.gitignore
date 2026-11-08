@@ -1,0 +1,6 @@
+# Ignore the local .terraform directory (cached plugins, modules, state)
+**/.terraform/*
+
+# Ignore the dependency lock file
+.terraform.lock.hcl
+**/.terraform.lock.hcl
